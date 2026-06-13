@@ -88,6 +88,19 @@ def get_churn_predictions(
 def get_retention_metrics(db: Session = Depends(get_db)):
     return RetentionService.get_retention_metrics(db)
 
+import os
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+
+# Serve React static frontend
+dist_path = os.path.join(os.path.dirname(__file__), "..", "dist")
+if os.path.exists(dist_path):
+    app.mount("/assets", StaticFiles(directory=os.path.join(dist_path, "assets")), name="assets")
+
+    @app.get("/{fallback_path:path}")
+    def serve_frontend(fallback_path: str):
+        return FileResponse(os.path.join(dist_path, "index.html"))
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
