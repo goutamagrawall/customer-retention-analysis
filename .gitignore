@@ -16,5 +16,4 @@ venv/
 
 # Ignore node modules and builds
 node_modules/
-dist/
 .eslintcache
