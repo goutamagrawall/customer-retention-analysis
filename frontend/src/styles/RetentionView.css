@@ -1,0 +1,207 @@
+.retention-view {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.retention-view h1 {
+  color: var(--dark);
+}
+
+.retention-metrics {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.retention-metrics h2 {
+  margin-bottom: 1.5rem;
+  color: var(--dark);
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.metric-card {
+  background: linear-gradient(135deg, #f5f7fa, #ffffff);
+  border: 1px solid var(--light);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+}
+
+.metric-label {
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metric-value {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.at-risk-customers {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.at-risk-customers h2 {
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+}
+
+.section-description {
+  color: var(--gray);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.customers-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.customers-table thead {
+  background: #f9f9f9;
+  border-bottom: 2px solid var(--light);
+}
+
+.customers-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--dark);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.customers-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--light);
+}
+
+.at-risk-row:hover {
+  background: #f9f9f9;
+}
+
+.churn-badge {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.churn-badge.critical {
+  background: var(--danger);
+}
+
+.churn-badge.high {
+  background: var(--warning);
+}
+
+.segment-badge {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  background: #e8f4f8;
+  color: var(--primary);
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.retention-insights {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.retention-insights h2 {
+  margin-bottom: 1.5rem;
+  color: var(--dark);
+}
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.insight-card {
+  background: linear-gradient(135deg, #f5f7fa, #ffffff);
+  border-left: 4px solid var(--primary);
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.insight-card h3 {
+  color: var(--dark);
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.insight-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.insight-card li {
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--gray);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.insight-card li:before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .table-container {
+    overflow-x: auto;
+    font-size: 0.85rem;
+  }
+
+  .customers-table th,
+  .customers-table td {
+    padding: 0.5rem;
+  }
+
+  .insights-grid {
+    grid-template-columns: 1fr;
+  }
+}
