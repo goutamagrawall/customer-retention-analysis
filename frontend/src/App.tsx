@@ -6,7 +6,8 @@ import SegmentationView from './components/SegmentationView/SegmentationView';
 import RetentionView from './components/RetentionView/RetentionView';
 import CustomerDirectory from './components/CustomerDirectory/CustomerDirectory';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 
+  (window.location.port === '3000' ? 'http://localhost:8000/api' : '/api');
 
 function App() {
   const [activeTab, setActiveTab] = useState('overview');
