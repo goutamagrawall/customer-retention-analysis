@@ -6,6 +6,10 @@ from pathlib import Path
 import os
 
 db_path = Path(__file__).parent.parent.parent / "data" / "retention.db"
+# Fallback for container environment where project root is /app
+if not db_path.exists() and Path("/app/data/retention.db").exists():
+    db_path = Path("/app/data/retention.db")
+
 DATABASE_URL = f"sqlite:///{db_path}"
 
 engine = create_engine(

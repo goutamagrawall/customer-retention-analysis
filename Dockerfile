@@ -6,9 +6,10 @@ WORKDIR /app
 COPY backend/requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy backend files and the prebuilt dist frontend folder
+# Copy backend files, prebuilt frontend, and database
 COPY backend/ ./
 COPY frontend/dist ./dist
+COPY data/ ./data
 
 # Port that Cloud Run routes traffic to
 ENV PORT=8080
